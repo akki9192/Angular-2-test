@@ -1,0 +1,35 @@
+<div class="container">
+  <img [src]="event?.imageUrl" [alt]="event?.name" class="event-image">
+
+  <div class="row">
+    <div class="col-md-11">
+      <h2>{{event?.name | uppercase}} </h2>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6">
+      <div><strong>Date:</strong> {{event?.date | date:'y/M/d'}}</div>
+      <div><strong>Time:</strong> {{event?.time}}</div>
+      <div><strong>Price:</strong> {{event?.price | currency:'USD':true}}</div>
+    </div>
+    <div class="col-md-6">
+      <address>
+        <strong>Address:</strong><br />
+        {{event?.location?.address}}<br />
+        {{event?.location?.city}}, {{event?.location?.country}}
+      </address>
+    </div>
+  </div>
+  <hr/>
+  <div style="margin-bottom:10px">
+
+    <button class="btn btn-default" (click)="filterBy='all'">All</button>
+    <button class="btn btn-default" (click)="filterBy='beginner'">Beginner</button>
+    <button class="btn btn-default" (click)="filterBy='intermediate'">Intermediate</button>
+    
+  </div>
+  <div>
+    <session-list [filterBy]="filterBy" [sessions]="event?.sessions"></session-list>
+  </div>
+</div>

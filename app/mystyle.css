@@ -1,0 +1,12 @@
+button {
+    color: deepskyblue;
+}
+h1 {
+  background-color: #485563;
+}
+
+
+.thumbnail{min-height:210px}
+.bld{font-style: bold}
+.italic{font-style: italic}
+.event-image{height:100px}
